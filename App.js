@@ -1,11 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import Search from './Components/Search'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Fait trop chaud ! voila quoi</Text>
-      <StatusBar style="auto" />
+      <Search />
     </View>
   );
 }
@@ -18,3 +18,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
