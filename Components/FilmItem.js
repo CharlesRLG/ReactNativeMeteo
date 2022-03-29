@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet } from 'react-native'
 import dayjs from 'dayjs'
 // import 'react-json-pretty/themes/adventure_time.css'
 // import JSONPretty from 'react-json-pretty'
-// import { getImageFromApi } from '../API/TMDBApi'
+import { getImageFromApi } from '../API/METEOApi'
 
 class FilmItem extends React.Component {
   render() {

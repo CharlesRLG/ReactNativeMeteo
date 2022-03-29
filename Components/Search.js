@@ -3,7 +3,7 @@ import React from 'react'
 import { FlatList, View, TextInput, Button, StyleSheet } from 'react-native'
 // import films from '../Helpers/filmsData'
 import FilmItem from '../Components/FilmItem'
-// import { getFilmsFromApiWithSearchedText } from '../API/TMDBApi'
+import { getFilmsFromApiWithSearchedText } from '../API/METEOApi'
 import { ActivityIndicator } from 'react-native'
 
 const styles = StyleSheet.create({
