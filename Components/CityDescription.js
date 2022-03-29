@@ -4,9 +4,9 @@ import { View, Text, Image, StyleSheet } from 'react-native'
 import dayjs from 'dayjs'
 // import 'react-json-pretty/themes/adventure_time.css'
 // import JSONPretty from 'react-json-pretty'
-import { getImageFromApi } from '../API/METEOApi'
+import { getInfoCityFromApi } from '../API/METEOApi'
 
-class FilmItem extends React.Component {
+class CityDescription extends React.Component {
   render() {
     const film = this.props.film
     console.log(this.props.film.title)
@@ -16,7 +16,7 @@ class FilmItem extends React.Component {
           {/* <JSONPretty data={film}></JSONPretty> */}
         </View>
         <View style={styles.film_main_container}>
-        {/* <Image style={styles.image} source={getImageFromApi(film.poster_path)} /> */}
+        {/* <Image style={styles.image} source={getInfoCityFromApi(film.poster_path)} /> */}
 
           <View style={styles.film_description}>
             <View style={styles.titreVote}>
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
     }
     
 })
-export default FilmItem
+export default CityDescription

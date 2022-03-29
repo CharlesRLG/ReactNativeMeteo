@@ -2,8 +2,8 @@
 import React from 'react'
 import { FlatList, View, TextInput, Button, StyleSheet } from 'react-native'
 // import films from '../Helpers/filmsData'
-import FilmItem from '../Components/FilmItem'
-import { getFilmsFromApiWithSearchedText } from '../API/METEOApi'
+import CityDescription from './CityDescription'
+import { getCityFromApiWithSearchedText } from '../API/METEOApi'
 import { ActivityIndicator } from 'react-native'
 
 const styles = StyleSheet.create({
@@ -72,7 +72,7 @@ class Search extends React.Component {
     if (this.state.isLoading) return
     if (this.searchedText.length > 0) {
       this.setState({ isLoading: true })
-      getFilmsFromApiWithSearchedText(this.searchedText).then((data) => {
+      getCityFromApiWithSearchedText(this.searchedText).then((data) => {
         this.setState({ films: data.results, isLoading: false });
       });
     }
@@ -83,7 +83,7 @@ class Search extends React.Component {
           <View style={styles.loading_container}>
             <ActivityIndicator size='large' />
           {/* Le component ActivityIndicator possède une propriété size pour définir la taille du visuel de chargement : small ou large. Par défaut size vaut small, on met donc large pour que le chargement soit bien visible */}
-        </View>
+          </View>
       )
     }
   }

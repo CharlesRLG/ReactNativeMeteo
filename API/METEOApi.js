@@ -9,26 +9,17 @@ async function slowNetwork() {
   await sleep(500)
 }
 
-const getFilmsFromApiWithSearchedText = async (text) => {
+const getCityFromApiWithSearchedText = async (text) => {
   await slowNetwork()
   const url =
-    'http://api.meteo-concept.com/api/ephemeride/0?token=' +
-    API_TOKEN 
+    'http://api.meteo-concept.com/api/location/cities?token=' +
+    API_TOKEN + search
     const response = await axios.get(url)
-    console.log('--getFilmsFromApiWithSearchedText--')
+    console.log('--getCityFromApiWithSearchedText--')
     console.log(url)
     console.log(response.data)
-    console.log('--fin getFilmsFromApiWithSearchedText--')
+    console.log('--fin getCityFromApiWithSearchedText--')
     return response.data
   }
-// API/TMDBApi.js
-const getImageFromApi = (name) => {
-  if (name === null || name === undefined)
-    return require('../Assets/filmVide.jpg')
-  // 'https://image.tmdb.org/t/p/original' + name
-  // 'https://image.tmdb.org/t/p/w300' + name
-  return { uri: 'https://image.tmdb.org/t/p/w300' + name }
-}
-
   
-  export { getFilmsFromApiWithSearchedText, getImageFromApi }
+  export { getCityFromApiWithSearchedText }
