@@ -4,29 +4,28 @@ import { View, Text, Image, StyleSheet } from 'react-native'
 import dayjs from 'dayjs'
 // import 'react-json-pretty/themes/adventure_time.css'
 // import JSONPretty from 'react-json-pretty'
-import { getInfoCityFromApi } from '../API/METEOApi'
+import { getLatitudeEtLongitude } from '../API/METEOApi'
 
 class CityDescription extends React.Component {
   render() {
-    const film = this.props.film
-    console.log(this.props.film.title)
+    const city = this.props.city
+    console.log(this.props.city.name)
     return (
       <View>
         <View>
           {/* <JSONPretty data={film}></JSONPretty> */}
         </View>
-        <View style={styles.film_main_container}>
+        <View style={styles.film_main_container} source={getLatitudeEtLongitude}>
         {/* <Image style={styles.image} source={getInfoCityFromApi(film.poster_path)} /> */}
 
           <View style={styles.film_description}>
-            <View style={styles.titreVote}>
-              <Text style={styles.titreFilm}>{film.title}</Text>
-              <Text style={styles.Vote_average_film}>{film.vote_average}</Text>
+            <View>
+              <Text>{city.name}</Text>
+              <Text>{city.cp}</Text>
+              <Text>{city.latitude}</Text>
+              <Text>{city.longitude}</Text>
+              <Text>{city.altitude}</Text>
             </View>
-            <Text style={styles.OverviewFilm}>{film.overview}</Text>
-            <Text style={styles.release_date_film}>
-              {dayjs(film.release_date).format('DD/MM/YYYY')}
-            </Text>
           </View>
         </View>
       </View>

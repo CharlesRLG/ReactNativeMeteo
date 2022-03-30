@@ -40,11 +40,11 @@ class Search extends React.Component {
           style={{ styles }}
           onChangeText={(text) => this._searchTextInputChanged(text)}
         />
-        <Button title="Rechercher" onPress={() => this._loadFilms()} />
+        <Button title="Rechercher" onPress={() => this._loadCities()} />
         <FlatList
-          data={this.state.films}
+          data={this.state.cities}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <FilmItem film={item} />}
+          renderItem={({ item }) => <cityItem city={item} />}
         />
       { this._displayLoading() }
       </View>
@@ -55,7 +55,7 @@ class Search extends React.Component {
     super(props)
     this.searchedText = ''
     this.state = {
-      films: [],
+      cities: [],
       isLoading: false // Par défaut à false car il n'y a pas de chargement tant qu'on ne lance pas de recherche
     }
     
@@ -68,12 +68,12 @@ class Search extends React.Component {
 
  // Bien noter les deux setState
  //   isLoading: True puis appel API puis lorsque l'API a répondu isLoading: False
- _loadFilms() {
+ _loadCities() {
     if (this.state.isLoading) return
     if (this.searchedText.length > 0) {
       this.setState({ isLoading: true })
       getCityFromApiWithSearchedText(this.searchedText).then((data) => {
-        this.setState({ films: data.results, isLoading: false });
+        this.setState({ cities: data.results, isLoading: false });
       });
     }
   }
