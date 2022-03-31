@@ -18,7 +18,7 @@ class CityDescription extends React.Component {
         <View style={styles.film_main_container} source={getLatitudeEtLongitude}>
         {/* <Image style={styles.image} source={getInfoCityFromApi(film.poster_path)} /> */}
 
-          <View style={styles.film_description}>
+          <View>
             <View>
               <Text>{city.name}</Text>
               <Text>{city.cp}</Text>

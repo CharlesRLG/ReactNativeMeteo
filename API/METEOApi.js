@@ -12,7 +12,7 @@ async function slowNetwork() {
 const getCityFromApiWithSearchedText = async (text) => {
   await slowNetwork()
   const url =
-    'http://api.meteo-concept.com/api/location/cities?token=' +
+    'https://api.meteo-concept.com/api/location/cities?token=' +
     API_TOKEN +
     '&search=' +
     text

@@ -43,12 +43,12 @@ class Search extends React.Component {
         <Button title="Rechercher" onPress={() => this._loadCities()} />
         <FlatList
           data={this.state.cities}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <cityItem city={item} />}
+          keyExtractor={(item) => item.insee}
+          renderItem={({ item }) => <CityDescription city={item} />}
         />
       { this._displayLoading() }
       </View>
-
+      
     )
   }
   constructor(props) {
@@ -73,7 +73,8 @@ class Search extends React.Component {
     if (this.searchedText.length > 0) {
       this.setState({ isLoading: true })
       getCityFromApiWithSearchedText(this.searchedText).then((data) => {
-        this.setState({ cities: data.results, isLoading: false });
+        this.setState({ cities: data.cities, isLoading: false });
+        console.log(JSON.stringify(data,undefined,true))
       });
     }
   }
