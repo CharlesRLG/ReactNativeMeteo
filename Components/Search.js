@@ -41,6 +41,7 @@ class Search extends React.Component {
           onChangeText={(text) => this._searchTextInputChanged(text)}
         />
         <Button title="Rechercher" onPress={() => this._loadCities()} />
+        <Text><a>{this.state.city.name}</a></Text>
         <CityDescription city={this.state.city} ephemeride={this.state.ephemeride} />
         {/* forecast={this.state.forecast} */}
       
