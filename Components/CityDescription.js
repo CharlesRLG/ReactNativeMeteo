@@ -1,31 +1,46 @@
 // Components/FilmItem.js
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
-import dayjs from 'dayjs'
 // import 'react-json-pretty/themes/adventure_time.css'
 // import JSONPretty from 'react-json-pretty'
-import { getLatitudeEtLongitude } from '../API/METEOApi'
+
 
 class CityDescription extends React.Component {
   render() {
     const city = this.props.city
+    const ephemeride = this.props.ephemeride
+    // const forecast = this.props.forecast
     console.log(this.props.city.name)
     return (
       <View>
         <View>
           {/* <JSONPretty data={film}></JSONPretty> */}
         </View>
-        <View style={styles.film_main_container} source={getLatitudeEtLongitude}>
+        <View style={styles.film_main_container}>
         {/* <Image style={styles.image} source={getInfoCityFromApi(film.poster_path)} /> */}
-
+        
           <View>
             <View>
-              <Text>{city.name}</Text>
-              <Text>{city.cp}</Text>
-              <Text>{city.latitude}</Text>
-              <Text>{city.longitude}</Text>
-              <Text>{city.altitude}</Text>
+              <Text>Ville: {city.name}</Text>
+              <Text>Code Postale: {city.cp}</Text>
+              <Text>Latitude: {city.latitude}</Text>
+              <Text>Longitude :{city.longitude}</Text>
+              <Text>Altitude :{city.altitude}</Text>
             </View>
+            <View>
+              <Text>Jour: {ephemeride.day}</Text>
+              <Text>Jour: {ephemeride.datetime}</Text>
+              <Text>Durée de la journée: {ephemeride.duration_day}</Text>
+              <Text>Levée de soleil: {ephemeride.sunrise}</Text>
+              <Text>Couché de soleil: {ephemeride.sunset}</Text>
+              <Text>Phase de la lune: {ephemeride.moon_phase}</Text>
+            </View>
+            {/* <View>
+              <Text>Température minimale: {forecast.tmin}</Text>
+              <Text>Température Maxmale: {forecast.tmax}</Text>
+              <Text>Probabilité de plui: {forecast.probarain}</Text>
+              <Text>Phase de la lune: {forecast.moon_phase}</Text>
+            </View> */}
           </View>
         </View>
       </View>
