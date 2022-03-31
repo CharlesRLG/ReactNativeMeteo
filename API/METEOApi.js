@@ -29,26 +29,22 @@ const getCityFromApiWithSearchedText = async (text) => {
         (response.data.cities[0].insee)
         let response2 = await axios.get(url)
         console.log(url)
-        console.log(response2.data)
-
-        //   if (response2.data.cities.length>0) {
-        //   url =
-        //   'http://api.meteo-concept.com/api/forecast/daily?token=' +
-        //   API_TOKEN +
-        //   '&insee=' +
-        //   (response2.data.cities[0].insee)
-        //   let response3 = await axios.get(url)
-        //   console.log(url)
-        //   console.log(response3.data)
-        //   console.log('--fin getCityFromApiWithSearchedText--')
-        //   return response3.data
-        // }
-  
+        console.log(response2.data)  
         console.log('--fin getCityFromApiWithSearchedText--')
         return response2.data
-      }
-
-      
+    }    
+    // if (response.data.cities.length>0) {
+    //   url =
+    //   'http://api.meteo-concept.com/api/forecast/daily?token=' +
+    //   API_TOKEN +
+    //   '&insee=' +
+    //   (response2.data.city[0].insee)
+    //   let response3 = await axios.get(url)
+    //   console.log(url)
+    //   console.log(response3.data)
+    //   console.log('--fin getCityFromApiWithSearchedText--')
+    //   return response3.data
+    // }  
   }
   
   export { getCityFromApiWithSearchedText }

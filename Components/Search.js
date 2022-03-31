@@ -42,7 +42,8 @@ class Search extends React.Component {
         />
         <Button title="Rechercher" onPress={() => this._loadCities()} />
         <CityDescription city={this.state.city} ephemeride={this.state.ephemeride} />
-        {/* forecast={this.state.forecast}  */}
+        {/* forecast={this.state.forecast} */}
+      
         {/* <FlatList
           data={this.state.city}
           keyExtractor={(item) => item.insee}
