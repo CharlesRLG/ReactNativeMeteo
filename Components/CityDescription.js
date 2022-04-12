@@ -9,7 +9,7 @@ class CityDescription extends React.Component {
   render() {
     const city = this.props.city
     const ephemeride = this.props.ephemeride
-    // const forecast = this.props.forecast
+    const forecast = this.props.forecast
     console.log(this.props.city.name)
     return (
       <View>
@@ -35,12 +35,16 @@ class CityDescription extends React.Component {
               <Text>Couché de soleil: {ephemeride.sunset}</Text>
               <Text>Phase de la lune: {ephemeride.moon_phase}</Text>
             </View>
-            {/* <View>
-              <Text>Température minimale: {forecast.tmin}</Text>
-              <Text>Température Maxmale: {forecast.tmax}</Text>
-              <Text>Probabilité de plui: {forecast.probarain}</Text>
-              <Text>Phase de la lune: {forecast.moon_phase}</Text>
-            </View> */}
+            <View>
+              <Text>Température minimale: {forecast.tmin} °</Text>
+              <Text>Température Maxmale: {forecast.tmax} °</Text>
+              <Text>Probabilité de plui: {forecast.probarain} %</Text>
+              <Text>Moyenne des vents: {forecast.wind10m} km/h</Text>
+              <Text>rafales de vent: {forecast.gust10m} km/h</Text>
+              <Text>Probabilité de gel: {forecast.probafrost} %</Text>
+              <Text>Probabilité de brouillard: {forecast.probafog} %</Text>
+              <Text>Probabilité de vent supérieur 70 km/h: {forecast.probawind70} %</Text>
+            </View>
           </View>
         </View>
       </View>

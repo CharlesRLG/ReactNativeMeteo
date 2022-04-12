@@ -41,7 +41,7 @@ class Search extends React.Component {
           onChangeText={(text) => this._searchTextInputChanged(text)}
         />
         <Button title="Rechercher" onPress={() => this._loadCities()} />
-        <CityDescription city={this.state.city} ephemeride={this.state.ephemeride} />
+        <CityDescription city={this.state.city} ephemeride={this.state.ephemeride}   forecast={this.state.forecast} />
         {/* forecast={this.state.forecast} */}
       
         {/* <FlatList
@@ -61,7 +61,7 @@ class Search extends React.Component {
       cities: [],
       city: [], 
       ephemeride: [],
-      // forecast: [],
+      forecast: [],
       isLoading: false // Par défaut à false car il n'y a pas de chargement tant qu'on ne lance pas de recherche
     }
     
@@ -79,9 +79,9 @@ class Search extends React.Component {
     if (this.searchedText.length > 0) {
       this.setState({ isLoading: true })
       getCityFromApiWithSearchedText(this.searchedText).then((data) => {
-        this.setState({ city: data.city, isLoading: false });
-        this.setState({ ephemeride : data.ephemeride , isLoading: false });
-        // this.setState({ forecast : data.forecast , isLoading: false });
+        this.setState({ city: data.ephemeride.city, isLoading: false });
+        this.setState({ ephemeride : data.ephemeride.ephemeride , isLoading: false });
+        this.setState({ forecast : data.forecast.forecast[0] , isLoading: false });
         console.log(JSON.stringify(data,undefined,true))
 
       });
