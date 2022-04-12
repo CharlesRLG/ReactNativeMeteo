@@ -38,7 +38,7 @@ class CityDescription extends React.Component {
             <View>
               <Text>Température minimale: {forecast.tmin} °</Text>
               <Text>Température Maxmale: {forecast.tmax} °</Text>
-              <Text>Probabilité de plui: {forecast.probarain} %</Text>
+              <Text>Probabilité de pluis: {forecast.probarain} %</Text>
               <Text>Moyenne des vents: {forecast.wind10m} km/h</Text>
               <Text>rafales de vent: {forecast.gust10m} km/h</Text>
               <Text>Probabilité de gel: {forecast.probafrost} %</Text>
