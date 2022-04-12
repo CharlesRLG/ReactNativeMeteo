@@ -16,34 +16,55 @@ class CityDescription extends React.Component {
         <View>
           {/* <JSONPretty data={film}></JSONPretty> */}
         </View>
-        <View style={styles.film_main_container}>
+        <View style={styles.informationVilleEtTemp}>
         {/* <Image style={styles.image} source={getInfoCityFromApi(film.poster_path)} /> */}
         
           <View>
+
             <View>
+              <Text><h2>Ville et Coordonnées:</h2></Text>
+            </View>
+
+            <View style={styles.coordoVille}>
               <Text>Ville: {city.name}</Text>
               <Text>Code Postale: {city.cp}</Text>
+              <Text><br></br></Text>
               <Text>Latitude: {city.latitude}</Text>
               <Text>Longitude :{city.longitude}</Text>
+              <Text><br></br></Text>
               <Text>Altitude :{city.altitude}</Text>
             </View>
+
             <View>
-              <Text>Jour: {ephemeride.day}</Text>
-              <Text>Jour: {ephemeride.datetime}</Text>
+              <Text><h2>Durée de la journée:</h2></Text>
+            </View>
+
+            <View style={styles.horaireLeveEtCouche}>
               <Text>Durée de la journée: {ephemeride.duration_day}</Text>
+              <Text><br></br></Text>
               <Text>Levée de soleil: {ephemeride.sunrise}</Text>
               <Text>Couché de soleil: {ephemeride.sunset}</Text>
+              <Text><br></br></Text>
               <Text>Phase de la lune: {ephemeride.moon_phase}</Text>
             </View>
+
             <View>
+              <Text><h2>Température, pluis et vent:</h2></Text>
+            </View>
+
+            <View style={styles.temperaturePluisVent}>
               <Text>Température minimale: {forecast.tmin} °</Text>
               <Text>Température Maxmale: {forecast.tmax} °</Text>
+              <Text><br></br></Text>
               <Text>Probabilité de pluis: {forecast.probarain} %</Text>
-              <Text>Moyenne des vents: {forecast.wind10m} km/h</Text>
-              <Text>rafales de vent: {forecast.gust10m} km/h</Text>
               <Text>Probabilité de gel: {forecast.probafrost} %</Text>
               <Text>Probabilité de brouillard: {forecast.probafog} %</Text>
+              <Text><br></br></Text>
+              <Text>Moyenne des vents: {forecast.wind10m} km/h</Text>
+              <Text>rafales de vent: {forecast.gust10m} km/h</Text>
               <Text>Probabilité de vent supérieur 70 km/h: {forecast.probawind70} %</Text>
+              <Text>Direction du vent: {forecast.dirwind10m} °</Text>
+              
             </View>
           </View>
         </View>
@@ -52,44 +73,29 @@ class CityDescription extends React.Component {
   }
 }
 const styles = StyleSheet.create({
-  film_main_container: {
-    flexDirection: 'row',
+  informationVilleEtTemp: {
+    display: 'flex',
     margin: 20,
     backgroundColor: '#FFFFF',
   },
-  film_description: {
-    flexDirection:'column',
-    marginLeft: 20,
-  }, 
-  titreVote: {
-    flexDirection: 'row',
-    fontSize: 16,
+  coordoVille: {
+   flex: 1,
+   borderWidth: 1,
+   backgroundColor: '#D6EDFC',
+   paddingTop:'5px',
+   paddingBottom: '5px',
+   paddingRight: '5px',
+   paddingLeft: '5px',
   },
-  titreFilm: {
-    marginRight: 50,
-    fontSize: 20,
-    minWidth: 300,
-    fontWeight: 'bold',
+  horaireLeveEtCouche: {
+    display: 'flex',
+    margin: 20,
+    backgroundColor: '#FFFFF',
   },
-  Vote_average_film: {
-    fontWeight: 'bold',
-  },
-  OverviewFilm: {
-    marginTop: 20,
-    marginBottom: 20,
-    maxWidth: 350,
-    minHeight: 100,
-  },
-  release_date_film: {
-    fontSize: 16,
-    marginLeft: 250,
-    fontWeight: 'bold',
-  },
-  image: {
-        width: 200,
-        height: 300,
-        flexDirection:'column',
-    }
-    
+  temperaturePluisVent: {
+    display: 'flex',
+    margin: 20,
+    backgroundColor: '#FFFFF',
+  }
 })
 export default CityDescription

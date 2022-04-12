@@ -36,7 +36,7 @@ class Search extends React.Component {
     return (
       <View style={styles.main_container}>
         <TextInput
-          placeholder='Choisissez une ville:'
+          placeholder='Choisissez une ville française:'
           style={{ styles }}
           onChangeText={(text) => this._searchTextInputChanged(text)}
         />
